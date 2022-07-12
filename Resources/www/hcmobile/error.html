@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>加载失败</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style>
+
+        body {
+            background-color: white;
+        }
+
+        .mui-bar-nav {
+            background-color: white;
+            box-shadow: 0 4px 7px 0 rgba(191, 191, 191, 0.4);
+        }
+
+        .mui-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: white;
+        }
+
+        .img {
+            margin-top: 20%;
+            width: 100%;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        p {
+            margin-top: 5%;
+            text-align: center;
+            color: rgba(170, 170, 170, 1);
+            font-size: 15px;
+        }
+
+        .mui-btn {
+            width: 80%;
+            height: 44px;
+            margin-left: 10%;
+            position: absolute;
+            bottom: 10%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header class="mui-bar mui-bar-nav">
+    <span id="backBtn" class="mui-icon mui-icon-arrowleft mui-pull-left" onclick="mui.back()" style="display: none"></span>
+    <h1 class="mui-title">加载失败</h1>
+</header>
+
+<div class="mui-content">
+    <img class="img" src="img/error.png">
+    <p id="text">您访问的页面暂时无法打开，点击屏幕重试</p>
+    <button id="resetBtn" type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="display: none">重置首页</button>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+
+    mui.init();
+
+
+    $(document).ready(function () {
+
+        // 当前设备导航栏高度
+        var s = parseFloat(getUrlParam('s'));
+        // layout_immersion
+        var l = JSON.parse(getUrlParam('l'));
+        // buildType
+        var d = getUrlParam('d');
+        // 获取layout_immersion的值，设置导航栏高度
+        if (l) {
+            
+            var h = $(".mui-bar").height();
+
+            $(".mui-bar").css("height", s + h + 'px');
+            $(".mui-bar").css("padding-top", s + 'px');
+            $(".mui-content").css("padding-top", s + h + 'px');
+        }
+        // 获取buildType值，设置重置按钮的显示状态
+        // 重置按钮在debug且是首页且不是小程序条件下显示
+        // 返回按钮在不是首页且不是小程序条件下显示
+        var code = getUrlParam('code');
+        var home = (code === 1 || code === "1");
+        var m = getUrlParam('m');
+        var mini = (m === 1 || m === "1");
+        if (d !== 'debug') {
+            // release
+            $("#resetBtn").hide();
+            if (home) {
+                // 正式、首页
+                $("#backBtn").hide();
+            }  else  {
+                // 正式、非首页
+                $("#backBtn").show();
+            }
+
+        } else {
+            // debug
+            if (mini) {
+                $("#resetBtn").hide();
+                if (!home){
+                    // 测试、小程序、非首页
+                    $("#backBtn").show();
+                } else {
+                    // 测试、小程序、首页
+                    $("#backBtn").hide();
+                }
+            } else  {
+                if (home) {
+                    // 测试、非小程序、首页
+                    $("#resetBtn").show();
+                    $("#backBtn").hide();
+                } else {
+                    // 测试、非小程序、非首页
+                    $("#resetBtn").hide();
+                    $("#backBtn").show();
+                }
+            }
+        }
+    });
+
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
+
+
+    $(function () {
+
+        $("#resetBtn").click(function (event) {
+            event.stopPropagation();
+            // 重置首页
+            navigator.mobileCenter.reset();
+        });
+
+        $(".mui-content").click(function () {
+
+            if (mui.os.ios) {
+                var u = getUrlParam('url');
+                window.location.replace(u);
+            } else {
+                navigator.mobileCenter.reload();
+            }
+        })
+    });
+</script>
+</body>
+
+</html>
+
+
+

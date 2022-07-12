@@ -1,0 +1,6 @@
+framework module EMCenterModule {
+  umbrella header "EMCenterModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

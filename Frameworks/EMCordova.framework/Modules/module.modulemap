@@ -1,0 +1,6 @@
+framework module EMCordova {
+  umbrella header "EMCordova-umbrella.h"
+
+  export *
+  module * { export * }
+}

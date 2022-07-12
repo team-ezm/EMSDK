@@ -1,0 +1,6 @@
+framework module EMDocumentpreviewerModule {
+  umbrella header "EMDocumentpreviewerModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

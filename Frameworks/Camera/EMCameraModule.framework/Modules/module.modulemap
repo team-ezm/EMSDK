@@ -1,0 +1,6 @@
+framework module EMCameraModule {
+  umbrella header "EMCameraModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

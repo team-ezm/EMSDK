@@ -1,0 +1,5 @@
+/Users/liuting/Desktop/插件SDK-iOS工程/EMSDK的副本3/Frameworks/VideoPreviewer/IJKPlayerSDK/IJKMediaFramework.framework[[:space:]] filter=lfs diff=lfs merge=lfs -text
+*..framework filter=lfs diff=lfs merge=lfs -text
+*.framework filter=lfs diff=lfs merge=lfs -text
+IJKMediaFramework filter=lfs diff=lfs merge=lfs -text
+*MediaFramework filter=lfs diff=lfs merge=lfs -text

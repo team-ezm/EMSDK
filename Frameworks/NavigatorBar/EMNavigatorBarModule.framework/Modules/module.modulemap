@@ -1,0 +1,6 @@
+framework module EMNavigatorBarModule {
+  umbrella header "EMNavigatorBarModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

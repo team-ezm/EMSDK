@@ -1,0 +1,73 @@
+PODS:
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
+    - AFNetworking/NSURLSession
+  - EMSDK (1.0.5):
+    - EMSDK/Core (= 1.0.5)
+  - EMSDK/Core (1.0.5):
+    - AFNetworking (= 4.0.0)
+    - FDFullscreenPopGesture (= 1.1)
+    - IQKeyboardManager (= 6.5.5)
+    - Masonry (= 1.1.0)
+    - MBProgressHUD (= 1.2.0)
+    - Reachability (= 3.2)
+    - SAMKeychain (= 1.5.3)
+    - YYCache (= 1.0.4)
+    - YYCategories (= 1.0.4)
+  - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManager (6.5.5)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - Reachability (3.2)
+  - SAMKeychain (1.5.3)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - EMSDK (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - FDFullscreenPopGesture
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - Reachability
+    - SAMKeychain
+    - YYCache
+    - YYCategories
+
+EXTERNAL SOURCES:
+  EMSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  EMSDK: a8c89694769b4a91abecae325bf46066d9ef452c
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: c68b27146b4458cefbc7fe19fa2cde23ff83a9ac
+
+COCOAPODS: 1.11.3

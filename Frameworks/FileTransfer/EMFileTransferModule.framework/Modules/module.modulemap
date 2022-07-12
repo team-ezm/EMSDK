@@ -1,0 +1,6 @@
+framework module EMFileTransferModule {
+  umbrella header "EMFileTransferModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

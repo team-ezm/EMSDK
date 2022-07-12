@@ -1,0 +1,6 @@
+framework module EMVideoPreviewerModule {
+  umbrella header "EMVideoPreviewerModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

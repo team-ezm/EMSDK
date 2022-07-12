@@ -1,0 +1,6 @@
+framework module EMScannerModule {
+  umbrella header "EMScannerModule-umbrella.h"
+
+  export *
+  module * { export * }
+}
